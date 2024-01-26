@@ -4,11 +4,13 @@
   "description": "Netflix clone using react",
   "main": "App.js",
   "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
     "test": "jest"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://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@github.com/ks-saama/ReactFlix.git"
+    "url": "git+https://github.com/ks-saama/ReactFlix.git"
   },
   "keywords": [
     "react",
