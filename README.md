@@ -2,7 +2,7 @@
 Netflix clone using react
 
 
-There are two types of dependencies
+### There are two types of dependencies
 1. Dev
     - For development
 2. Normal
@@ -12,7 +12,7 @@ npm install -D
 here -D means dev dependency.
 
 
-npx parcel index.html
+### npx parcel index.html
 - Dev build
 - runs local server on localhost:1234
 - HMR Hot Module Replacement (Hot Realoading)
@@ -32,3 +32,13 @@ npx parcel index.html
 - Different dev and production(npx parcel build index.html) bundles
 
 
+
+### react hook - normal js function
+- whenever state veriable changes react re-render component
+- Reconciliation Algorithm (React Fiber)
+- Virtual DOM - is representation of actual DOM
+    - React.createElement
+
+- Two main hooks 
+- useState
+- useEffect

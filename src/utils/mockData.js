@@ -1,46 +1,5 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-
-const Header = () => {
-    return (
-        <div className="header">
-            <div className="logo-container">
-                <img className="logo" src="https://dynamic.brandcrowd.com/asset/logo/7f982a19-779d-4dd3-b533-7a9f66474000/logo-search-grid-1x?logoTemplateVersion=1&v=637810055012670000">
-                </img>
-            </div>
-
-            <div className="nav-items">
-                <ul>
-                    <li>Cart</li>
-                    <li>About Us</li>
-                    <li>Contanct Us</li>
-                </ul>
-            </div>
-        </div>
-    )
-}
-
-
-const RestaurantCard = (props) => {
-    const {data} = props;
-    const {info} = data;
-    const couisine = info.cuisine.map((i) => i.name).join(", ")
-    // console.log(data)
-    return (
-        <div className="restaurant-card">
-            <img className="restaurant-logo"
-            alt="restaurant-logo"
-            src={info.image.url}></img>
-            <h3>{info.name}</h3>
-            <h4>{couisine}</h4>
-            <h4>{info.rating.aggregate_rating} stars</h4>
-            <h4>{data.order.deliveryTime}</h4>
-        </div>
-    )
-}
-
 // from https://www.zomato.com/ncr/order-food-online?delivery_subzone=514
-zomato_data = [
+export const zomato_data = [
     {
       "type": "restaurant",
       "info": {
@@ -1914,36 +1873,4 @@ zomato_data = [
       ]
     }
   ]
-const Body = () => {
-    return (
-        <div className="body">
-            <div className="search">Search</div>
-
-            <div className="restaurant-container">
-                {
-                    zomato_data.map(
-                        i => (<RestaurantCard key={i.info.resId} data={i}/>)
-                    )
-                }
-            </div>
-        </div>
-    )
-}
-
-
-const AppLayout = () => {
-    return (
-        <div className="app">
-             {/* Header */}
-             <Header />
-             {/* Body */}
-             <Body />
-             {/* Footer */}
-        </div>
-    )
-}
-
-const root = ReactDOM.createRoot(document.getElementById("root"));
-
-root.render(<AppLayout />);
 
