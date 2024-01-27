@@ -1,4 +1,59 @@
 // from https://www.zomato.com/ncr/order-food-online?delivery_subzone=514
+
+export const headers = {
+"Accept": '*/*',
+"Accept-Encoding":" gzip, deflate, br",
+"Accept-Language": "en-US,en;q=0.9",
+"Connection": "keep-alive",
+"Content-Length": "1583",
+"Content-Type": "application/json",
+"Cookie": "PHPSESSID=18e3b380d006f2b29653c2f970265d17; csrf=a8fd1371973650e155438d34e23de4b5; fbcity=1; fre=0; rd=1380000; zl=en; fbtrack=54943de2e2be9933dfeecc99da229bec; ltv=110; lty=110; locus=%7B%22addressId%22%3A0%2C%22lat%22%3A28.626451%2C%22lng%22%3A77.213013%2C%22cityId%22%3A1%2C%22ltv%22%3A110%2C%22lty%22%3A%22subzone%22%2C%22fetchFromGoogle%22%3Afalse%2C%22dszId%22%3A514%7D; _gcl_au=1.1.712668233.1706351244; _gid=GA1.2.791312557.1706351244; _fbp=fb.1.1706351247204.431455638; ak_bmsc=EA2841A498430A51A3B493EE8B1BEDF3~000000000000000000000000000000~YAAQlmPUF5qINT+NAQAAD9dUSxYFtBQZ+sQEoU5m+HZHs63ansT3QbvfpidiVQdgCo46RWZh8mPMXARaLixndVCH3lhOGFzh93tD7F9lMrS3z1FZWICtRgb/6J0V2b7Id1eOR7FB8B4D88YbSwminlJuLPJqxbI07mTEHs/OFjzyvqwW9CNk8x9p9y6qc7tXSQWR/Pj2JnRcPtiN6DPF9Pg/fyjFaaMuMrgmYMrJDlSI/KIwTvGVjOG659C22rl5s2OjVyMgiQjl7HeF+D8lh7uSG2VoYYxjNBlYG+cd1SoVzSwY06bzfKQQOy1hCo3lzfDCIi0zQY0QlKjWguLoZWM5ZivX7krFsJzPLlpvQq40W+mndqh6d4OipKxM; _gat_global=1; _gat_city=1; _gat_country=1; _ga_2XVFHLPTVP=GS1.1.1706365869.2.1.1706366966.59.0.0; _ga=GA1.1.460499966.1706351244; AWSALBTG=SLG6+54XV+ZVo4wFB5rE+GCv08oKsW/m22v2jzq00ULvCs8xQ2ctKIhMAwEzLF4156Hm7Szw9zVj3+tJr8eKVV5uj+BIo9CQ17jCb0qT7qe04zU53CQuBMremmlZ/U7p3Sf5+YdNkOLn70pvZa8gHV0H4MJbctm6bp//Y7oqoHK+; AWSALBTGCORS=SLG6+54XV+ZVo4wFB5rE+GCv08oKsW/m22v2jzq00ULvCs8xQ2ctKIhMAwEzLF4156Hm7Szw9zVj3+tJr8eKVV5uj+BIo9CQ17jCb0qT7qe04zU53CQuBMremmlZ/U7p3Sf5+YdNkOLn70pvZa8gHV0H4MJbctm6bp//Y7oqoHK+; _ga_3NH52KS4KE=GS1.2.1706365871.2.1.1706366967.60.0.0; _ga_X6B66E85ZJ=GS1.2.1706365871.2.1.1706366968.60.0.0",
+"Host": "www.zomato.com",
+"Origin": "https://www.zomato.com",
+"Referer": "https://www.zomato.com/ncr/order-food-online?delivery_subzone=514",
+"Sec-Fetch-Dest": "empty",
+"Sec-Fetch-Mode": "cors",
+"Sec-Fetch-Site": "same-origin",
+"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+"sec-ch-ua": '"Not_A Brand";v="8", "Chromium";v="120", "Google Chrome";v="120"',
+"sec-ch-ua-mobile": "?0",
+"sec-ch-ua-platform": "Windows",
+"x-zomato-csrft": "a8fd1371973650e155438d34e23de4b5",
+}
+
+export const paylod = {
+  "context": "delivery",
+  "filters": "{\"searchMetadata\":{\"previousSearchParams\":\"{\\\"PreviousSearchId\\\":\\\"53edab7f-cbc8-458b-bf68-393813aa2192\\\",\\\"PreviousSearchFilter\\\":[\\\"{\\\\\\\"category_context\\\\\\\":\\\\\\\"delivery_home\\\\\\\"}\\\",\\\"\\\"]}\",\"postbackParams\":\"{\\\"processed_chain_ids\\\":[931,20187815,18454466,246,171,18774815,143,1190,19179233],\\\"shown_res_count\\\":9,\\\"search_id\\\":\\\"53edab7f-cbc8-458b-bf68-393813aa2192\\\"}\",\"totalResults\":17562,\"hasMore\":true,\"getInactive\":false},\"dineoutAdsMetaData\":{},\"appliedFilter\":[{\"filterType\":\"category_sheet\",\"filterValue\":\"delivery_home\",\"isHidden\":true,\"isApplied\":true,\"postKey\":\"{\\\"category_context\\\":\\\"delivery_home\\\"}\"}],\"urlParamsForAds\":{}}",
+  "addressId": 0,
+  "entityId": 110,
+  "entityType": "subzone",
+  "locationType": "",
+  "isOrderLocation": 1,
+  "cityId": 1,
+  "latitude": "28.6269950000",
+  "longitude": "77.2152900000",
+  "userDefinedLatitude": 28.626451,
+  "userDefinedLongitude": 77.213013,
+  "entityName": "Hanuman Road Area, Connaught Place, New Delhi",
+  "orderLocationName": "Hanuman Road Area, Connaught Place, New Delhi",
+  "cityName": "Delhi NCR",
+  "countryId": 1,
+  "countryName": "India",
+  "displayTitle": "Hanuman Road Area, Connaught Place, New Delhi",
+  "o2Serviceable": true,
+  "placeId": "ChIJs7xXmkv9DDkRo_1IJRn_4Ys",
+  "cellId": "4110939061668020224",
+  "deliverySubzoneId": 514,
+  "placeType": "GOOGLE_PLACE",
+  "placeName": "Hanuman Road Area, Connaught Place, New Delhi",
+  "isO2City": true,
+  "fetchFromGoogle": false,
+  "fetchedFromCookie": true,
+  "isO2OnlyCity": false,
+  "address_template": [],
+  "otherRestaurantsUrl": ""
+}
+
 export const zomato_data = [
     {
       "type": "restaurant",
