@@ -27,7 +27,6 @@
 .restaurant-card {
     padding: 5px;
     width: 200px;
-    height: 300px;
     background-color: #f0f0f0;
     margin: 5px;
 }
@@ -42,6 +41,7 @@
 }
 
 .restaurant-logo {
+    height: 35%;
     width: 100%;
 }
 
