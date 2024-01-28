@@ -42,3 +42,10 @@ here -D means dev dependency.
 - Two main hooks 
 - useState
 - useEffect
+
+
+Two types of routing 
+- Client side
+- Server side
+
+
