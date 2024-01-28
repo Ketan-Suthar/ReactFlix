@@ -39,25 +39,26 @@ const Body = () => {
 
     return (
         <div className="body">
-            <div className="filter">
+            <div className="filter flex">
                 <div className="search">
-                    <input type="text" className="search-btn" value={searchText} onChange={(e)=>{
+                    <input type="text" className="border border-solid border-black"
+                        value={searchText} onChange={(e)=>{
                         setSearchText(e.target.value)
                     }}/>
-                    <button onClick={()=>{
+                    <button className="px-4 py-2 bg-gray-100 m-4 rounded-lg" onClick={()=>{
                         console.log(searchText);
                         const result = resDataState.filter((i) => i.info.name.toLowerCase().includes(searchText.toLowerCase()));
                         if(result && result.length > 0)
                             setFilteredResDataState(result);
                     }}>Search</button>
                 </div>
-                <button className="filter-btn" onClick={() => {
+                <button className="filter-btn px-4 py-2 bg-gray-100 m-4 rounded-lg" onClick={() => {
                     console.log("button clicked");
                     setFilteredResDataState(resDataState.filter((i) => i.info.avgRatingString >= 4.4));
                 }}>Top Restaurants</button>
             </div>
 
-            <div className="restaurant-container">
+            <div className="restaurant-container flex flex-wrap">
                 {
                     filteredResDataState && filteredResDataState.map(
                         i => (

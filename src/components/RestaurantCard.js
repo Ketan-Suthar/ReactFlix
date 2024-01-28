@@ -6,7 +6,7 @@ const RestaurantCard = (props) => {
     const couisine = data.info.cuisines.join(", ")
     // console.log(data)
     return (
-        <div className="restaurant-card">
+        <div className="m-4 p-4 w-52 restaurant-card bg-gray-100 hover:bg-yellow-100">
             <img className="restaurant-logo"
             alt="restaurant-logo"
             src={CDN_URL + info.cloudinaryImageId}></img>
