@@ -48,4 +48,11 @@ Two types of routing
 - Client side
 - Server side
 
+React Class component life cycle:
+https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
+
+return function from useEffect work as unmounting call back
+
+Chunking, Code Splitting, Dynamic Bundling, Lazzy Loading< On Demand Loading
+
 
