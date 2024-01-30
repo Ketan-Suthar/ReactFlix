@@ -56,3 +56,7 @@ return function from useEffect work as unmounting call back
 Chunking, Code Splitting, Dynamic Bundling, Lazzy Loading< On Demand Loading
 
 
+
+### CreateContext UseContext
+
+- data we want to use at multiple places but dont want to pass it through props, use context

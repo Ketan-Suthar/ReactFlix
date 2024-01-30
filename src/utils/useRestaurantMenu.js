@@ -11,7 +11,6 @@ const useRestaurantMenu = (resId) => {
     const fetchData = async () => {
         let response = await fetch(SWIGGY_RES_API + resId);
         response = await response.json();
-        console.log(response);
         setResInfo(response)
     }
 

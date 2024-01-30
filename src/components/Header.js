@@ -1,13 +1,16 @@
-import { useState } from "react"
+import { useContext, useState } from "react"
 import { Link } from "react-router-dom"
+import UserContext from "../utils/UserContext";
+import { LOGO_URL } from "../utils/constants";
 
 const Header = () => {
-    const [btnName, setBtnName] = useState('Login')
+    const [btnName, setBtnName] = useState('Login');
+    const { loggedInUser, setUserName } = useContext(UserContext);
 
     return (
         <div className="flex justify-between">
             <div className="logo-container">
-                <img className="w-20" src="https://dynamic.brandcrowd.com/asset/logo/7f982a19-779d-4dd3-b533-7a9f66474000/logo-search-grid-1x?logoTemplateVersion=1&v=637810055012670000">
+                <img className="w-20" alt="img"  src={LOGO_URL}>
                 </img>
             </div>
 
@@ -19,11 +22,14 @@ const Header = () => {
                     <li className="px-4"><Link to='/contact-us'>Contanct Us</Link></li>
                     <button className="login px-4" onClick={()=> {
                         if (btnName === 'Login') {
+                            setUserName("Anonymous User")
                             setBtnName('Logout')
                         }else{
+                            setUserName("Ketan Suthar")
                             setBtnName('Login')
                         }
                     }}>{btnName}</button>
+                    <li className="px-2 font-bold">{loggedInUser}</li>
                 </ul>
             </div>
         </div>
