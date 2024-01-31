@@ -60,3 +60,17 @@ Chunking, Code Splitting, Dynamic Bundling, Lazzy Loading< On Demand Loading
 ### CreateContext UseContext
 
 - data we want to use at multiple places but dont want to pass it through props, use context
+
+
+### Redux toolkit
+- install @reduxjs/toolkit and react-redux
+- Build our store
+- Connect our store to our app
+- Slice(cart slice)
+- dispatch(action)
+- Selector
+
+- redux uses immer to detect state changes
+- redux devtools
+- RTK Query(to fetch data)
+
