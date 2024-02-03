@@ -2,7 +2,11 @@
 module.exports = {
   content: ["./src/**/*.{html,js}"],
   theme: {
-    extend: {},
+    extend: {
+      fontSize: {
+        closebtn: ['2.35rem', '2.2rem']
+      }
+    },
   },
   plugins: [],
 }

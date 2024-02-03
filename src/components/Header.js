@@ -12,9 +12,9 @@ const Header = () => {
 
 
     return (
-        <nav className="flex items-center justify-between flex-wrap pt-3 pl-2 pb-3 sticky top-0 z-50 bg-white">
+        <nav className="flex items-center justify-between flex-wrap pt-3 pl-2 pb-3 sticky top-0 z-50 bg-white border-2 border-gray-100">
             <div className="flex items-center flex-shrink-0 text-white mr-6 lg:mr-72">
-                <img src="https://lh3.googleusercontent.com/Ryg5ih-fOWbpEGDpbJYJz5RTq3_28Tvo2h3JQRCdiz16lw5ghitDMN6hcWA57g0d6_8VOqQYcCemRBOfZGQA64ZKkFOn71zuF1LDsXwCh4ywF-_z6VqxbBqmbQvK_-PWfZcztxDd1WDTEEUHX6GdP60" className="w-100 h-10 mr-2" alt="Logo" />
+                <img className="w-100 h-10 mr-2" alt="Logo" src='https://4.bp.blogspot.com/-75Xd5SkWY1c/Vm43dVBUGxI/AAAAAAAADDQ/KedYDTymC7E/s1600/Ajanta%2BPainting%2BPadmapani%2B03.jpg' />
             </div>
             <div className="block lg:hidden">
                 <button
@@ -40,13 +40,11 @@ const Header = () => {
             <div
                 className={`w-full block flex-grow lg:flex lg:items-center lg:w-auto ${isOpen ? "block" : "hidden"}`}
             >
-                <div className="text-sm lg:flex-grow">
-                    <ul className="block mt-4 lg:inline-block lg:mt-0 text-white-200 mr-4">
-                    <li className="block mt-4 lg:inline-block lg:mt-0 text-white-200 mr-4"><Link to='/'>Home</Link></li>
-                    <li className="block mt-4 lg:inline-block lg:mt-0 text-white-200 mr-4"><Link to='/cart'>Cart({cartItems?.length})</Link></li>
-                    <li className="block mt-4 lg:inline-block lg:mt-0 text-white-200 mr-4"><Link to='/about'>About Us</Link></li>
-                    <li className="block mt-4 lg:inline-block lg:mt-0 text-white-200 mr-4"><Link to='/contact-us'>Contanct Us</Link></li>
-                    {/* <button className="block mt-4 lg:inline-block lg:mt-0 text-white-200 mr-4" onClick={()=> {
+                <div className="text-sm lg:flex-grow text-[18px]">
+                    <ul className="block mt-4 lg:inline-block lg:mt-0 text-white-200 ml-10">
+                        <li className="block mt-4 lg:inline-block lg:mt-0 text-white-200 mr-7"><Link to='/'>Home</Link></li>
+                        <li className="block mt-4 lg:inline-block lg:mt-0 text-white-200 mr-7"><Link to='/contact-us'>Contanct Us</Link></li>
+                        {/* <button className="block mt-4 lg:inline-block lg:mt-0 text-white-200 mr-4" onClick={()=> {
                         if (btnName === 'Login') {
                             setUserName("Anonymous User")
                             setBtnName('Logout')
@@ -56,7 +54,7 @@ const Header = () => {
                         }
                     }}>{btnName}</button>
                     <li className="block mt-4 lg:inline-block lg:mt-0 text-white-200 mr-4">{loggedInUser}</li> */}
-                </ul>
+                    </ul>
                 </div>
             </div>
         </nav>

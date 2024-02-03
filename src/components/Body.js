@@ -1,16 +1,12 @@
-import RestaurantCard, { withNonVegLabel, withVegLabel } from "./RestaurantCard";
-import { useContext, useEffect, useState } from "react";
-import Shimmer from "./Shimmer";
-import { Link } from "react-router-dom";
+import CategoryCard, { withNonVegLabel, withVegLabel } from "./CategoryCard";
+import { useEffect, useState } from "react";
 import { SWIGGY_HOME_API } from "../utils/constants";
 import useOnlineStatus from "../utils/useOnlineStatus";
-import UserContext from "../utils/UserContext";
+import CategoryCard from "./CategoryCard";
 
 const Body = () => {
     const [resDataState, setResDataState] = useState([]);
     const [filteredResDataState, setFilteredResDataState] = useState([]);
-    const [searchText, setSearchText] = useState("");
-    const { loggedInUser, setUserName } = useContext(UserContext);
 
     useEffect( () => {
         fetchData();
@@ -35,19 +31,15 @@ const Body = () => {
     }
 
     if (!resDataState || resDataState.length === 0) {
-        return <Shimmer/>
+        return <h1>Loading...</h1>
     }
 
     return (
         <div className="body">
-            <div className="restaurant-container flex min-h-screen w-full flex-wrap content-center justify-between p-5 bg-gray-100">
+            <div className="restaurant-container flex min-h-screen w-full flex-wrap content-center justify-between p-5">
                 {
                     filteredResDataState?.map(
-                        i => (
-                           <Link key={i.info.id} to={"/restaurant/" + i.info.id}> 
-                                <RestaurantCard data={i} />
-                           </Link>
-                        )
+                        i => (<CategoryCard key={i.info.id} data={i} />)
                     )
                 }
             </div>
