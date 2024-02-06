@@ -34,7 +34,7 @@ const CategoryItems = (props) => {
     console.log(foodItems)
     return (
         <>
-            <div className="text-center">
+            <div className="text-center bg-slate-50">
                 <h1 className="font-bold my-6 text-2xl">{name}</h1>
                 <p className="font-bold text-lg">{cuisines}</p>
                 <div className="restaurant-container flex min-h-screen w-full flex-wrap content-center justify-between p-5">
@@ -45,7 +45,7 @@ const CategoryItems = (props) => {
 
                                     <div key={item?.card?.info?.id} className="shadow-xl w-52 bg-white p-1 m-2 border-2 border-gray-200">
                                         <div>
-                                            <img onClick={()=>imageClick(item?.card?.info?.imageId ? CDN_URL + item?.card?.info?.imageId : LOGO_URL)} alt="image" className="h-32 w-full object-cover cursor-pointer" src={item?.card?.info?.imageId ? CDN_URL + item?.card?.info?.imageId : LOGO_URL} />
+                                            <img onClick={()=>imageClick(item?.card?.info?.imageId ? CDN_URL + item?.card?.info?.imageId : LOGO_URL)} alt="image" className="h-32 w-full object-cover cursor-pointer p-1" src={item?.card?.info?.imageId ? CDN_URL + item?.card?.info?.imageId : LOGO_URL} />
                                             <ul className="mt-3 flex flex-wrap">
                                                 <li className="mr-auto text-justify">
                                                     {item.card.info.name}

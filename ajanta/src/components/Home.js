@@ -1,10 +1,10 @@
-import CategoryCard, { withNonVegLabel, withVegLabel } from "./CategoryCard";
 import { useEffect, useState } from "react";
 import { SWIGGY_HOME_API } from "../utils/constants";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import CategoryCard from "./CategoryCard";
+import ImageCarousel from "./ImageCarousel";
 
-const Body = () => {
+const Home = () => {
     const [resDataState, setResDataState] = useState([]);
     const [filteredResDataState, setFilteredResDataState] = useState([]);
 
@@ -35,7 +35,10 @@ const Body = () => {
     }
 
     return (
-        <div className="body">
+        <div className="body bg-slate-50">
+            <ImageCarousel/>
+            <div>
+              <h1 className="text-center text-4xl font-bold mt-16">What we sell</h1>
             <div className="restaurant-container flex min-h-screen w-full flex-wrap content-center justify-between p-5">
                 {
                     filteredResDataState?.map(
@@ -43,8 +46,9 @@ const Body = () => {
                     )
                 }
             </div>
+            </div>
         </div>
     )
 }
 
-export default Body;
+export default Home;
