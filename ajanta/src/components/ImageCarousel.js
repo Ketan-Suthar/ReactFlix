@@ -1,11 +1,10 @@
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import { ReactDOM } from "react-dom";
 
 const images = [
-    "./images/Gojo.jpg",
-    "./images/l.jpg",
-    "./images/luffy.png"
+    "/images/Gojo.jpg",
+    "/images/l.jpg",
+    "/images/luffy.png"
 ];
 
 const ImageCarousel = () => {
