@@ -1,0 +1,12 @@
+[
+    {
+        "name": "Bikanervala",
+        "avgRating": "4.5",
+        "imageURL": "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/b6aoprmxchhobdoyhqra"
+    },
+    {
+        "name": "McDonald's",
+        "avgRating": "4.4",
+        "imageURL": "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/03501c33ecb3a3105124441e541e6fe4"
+    }
+]
