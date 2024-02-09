@@ -1,0 +1,50 @@
+[
+    {
+        "id": "1",
+        "name": "Bikanervala",
+        "avgRating": "4.5",
+        "fileName": "Gojo.jpg"
+    },
+    {
+        "id": "2",
+        "name": "McDonald's",
+        "avgRating": "4.4",
+        "fileName": "l.jpg"
+    },
+    {
+        "id": "3",
+        "name": "Dominoz",
+        "avgRating": "4.1",
+        "fileName": "luffy.png"
+    },
+    {
+        "id": "4",
+        "name": "Sams Pizza",
+        "avgRating": "3.4",
+        "fileName": "luffy2.png"
+    },
+    {
+        "id": "5",
+        "name": "Patang Hotel",
+        "avgRating": "4.4",
+        "fileName": "Gojo.jpg"
+    },
+    {
+        "id": "6",
+        "name": "Mango Res",
+        "avgRating": "4.2",
+        "fileName": "l.jpg"
+    },
+    {
+        "id": "7",
+        "name": "Taj Hotel",
+        "avgRating": "4.4",
+        "fileName": "luffy.png"
+    },
+    {
+        "id": "8",
+        "name": "Octant Pizza",
+        "avgRating": "4.2",
+        "fileName": "luffy2.png"
+    }
+]
