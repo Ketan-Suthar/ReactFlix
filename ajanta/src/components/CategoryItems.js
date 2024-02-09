@@ -79,7 +79,7 @@ const ItemModal = ({ closeModal, item }) => {
         <div className="fixed top-0 left-0 w-screen h-screen bg-black/75 z-[101] justify-center items-center flex">
             <a className="fixed z-90 top-2 right-2 text-white text-closebtn font-bold cursor-pointer bg-black h-11 w-9 text-center hover:scale-110 transition duration-500 object-cover"
                 onClick={closeModal}>&times;</a>
-            <section className="h-4/5 w-4/5 flex justify-center items-center">
+            <section className="h-4/5 sm:w-4/5 w-full flex justify-center items-center">
                 <div className="overflow-scroll no-scrollbar h-full m-4 w-full rounded-md border border-gray-100 text-gray-600 shadow-md bg-white">
                     <div className="flex flex-col text-gray-600 md:flex-row justify-between">
                         <div className="block h-1/2 w-full sm:w-3/5 rounded-md">
