@@ -5,22 +5,7 @@ import { CDN_URL } from "../utils/constants";
 
 
 const ContanctUs = () => {
-    const [resDataState, setResDataState] = useState([]);
-    const [filteredResDataState, setFilteredResDataState] = useState([]);
-
-    useEffect(() => {
-        fetchData();
-    }, []);
-
-    const fetchData = async () => {
-        const data = await fetch(SWIGGY_HOME_API, { "method": "GET" });
-
-        const json = await data.json();
-        let res = json.data.cards.filter(i => i?.card?.card?.id === "restaurant_grid_listing")[0]
-        const restaurants = res?.card?.card?.gridElements?.infoWithStyle?.restaurants
-        setResDataState(restaurants)
-        setFilteredResDataState(restaurants)
-    }
+    const [resDataState, setResDataState] = useState(["1", "2", "3"]);
 
     const onlineStatus = useOnlineStatus();
 
@@ -40,11 +25,11 @@ const ContanctUs = () => {
                 <h1 className="text-3xl font-bold">Contact Info</h1>
                 <div className="restaurant-container flex w-full flex-wrap content-center justify-between">
                     {
-                        filteredResDataState?.map((i, ind) => {
+                        resDataState?.map((i, ind) => {
                             return ind<3 && (
-                            <div key={i.info.id} className="w-[350px] flex bg-white p-3 m-5 border-2 border-gray-100 shadow-xl">
+                            <div key={i} className="w-[350px] flex bg-white p-3 m-5 border-2 border-gray-100 shadow-xl">
                                 <div className="w-20 h-full">
-                                    <img alt="image" className="w-full h-full object-cover" src={CDN_URL + i.info.cloudinaryImageId} />
+                                    <img alt="image" className="w-full h-full object-cover" src="/images/luffyy.png" />
                                 </div>
                                 <div className="w-50 pl-4">
                                     <ul className="mt-3 text-sm">
