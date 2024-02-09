@@ -9,7 +9,7 @@ const useRestaurantMenu = (resId) => {
     }, [])    
 
     const fetchData = async () => {
-        fetch(`http://localhost:3000/data/categoryItems/${resId}.json`)
+        fetch(`/data/categoryItems/${resId}.json`)
         .then((res) => res.text())
         .then((text) => {
             const json = JSON.parse(text)
