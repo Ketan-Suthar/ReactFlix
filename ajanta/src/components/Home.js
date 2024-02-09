@@ -13,13 +13,15 @@ const Home = () => {
     }, []);
 
     const fetchData = async () => {
-        const data = await fetch(SWIGGY_HOME_API, {"method": "GET"});
-        
-        const json = await data.json();
-        let res = json.data.cards.filter(i => i?.card?.card?.id==="restaurant_grid_listing")[0]
-        const restaurants = res?.card?.card?.gridElements?.infoWithStyle?.restaurants
-        setResDataState(restaurants)
-        setFilteredResDataState(restaurants)
+        fetch("data/categories.json")
+        .then((res) => res.text())
+        .then((text) => {
+            const json = JSON.parse(text)
+            console.log(json)
+            setResDataState(json)
+            setFilteredResDataState(json)
+        })
+        .catch((e) => console.error(e));
     }
 
     const onlineStatus = useOnlineStatus();
@@ -42,7 +44,7 @@ const Home = () => {
             <div className="restaurant-container flex min-h-screen w-full flex-wrap content-center justify-between p-5">
                 {
                     filteredResDataState?.map(
-                        i => (<CategoryCard key={i.info.id} data={i} />)
+                        i => (<CategoryCard key={i.id} data={i} />)
                     )
                 }
             </div>

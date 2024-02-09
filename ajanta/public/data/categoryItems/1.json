@@ -1,0 +1,128 @@
+{
+    "categoryInfo": {
+        "name": "Category1",
+        "cuisines": "Wooden"
+    },
+    "items": [
+        {
+            "id": "1-1",
+            "name": "Product 1",
+            "avgRating": "4.5",
+            "price": "1000",
+            "image": "Gojo.jpg",
+            "image1": "luffy2.png",
+            "image2": "l.jpg",
+            "image3": "luffy.png"
+        },
+        {
+            "id": "1-2",
+            "name": "Product 2",
+            "avgRating": "4.5",
+            "price": "1000",
+            "image": "luffy2.png",
+            "image1": "Gojo.jpg",
+            "image2": "l.jpg",
+            "image3": "luffy.png"
+        },
+        {
+            "id": "1-3",
+            "name": "Product 3",
+            "avgRating": "4.5",
+            "price": "1000",
+            "image": "luffy.png",
+            "image1": "Gojo.jpg",
+            "image2": "l.jpg",
+            "image3": "luffy2.png"
+        },
+        {
+            "id": "1-4",
+            "name": "Product 4",
+            "avgRating": "4.5",
+            "price": "1000",
+            "image": "l.jpg",
+            "image1": "Gojo.jpg",
+            "image2": "luffy.png",
+            "image3": "luffy2.png"
+        },
+        {
+            "id": "1-5",
+            "name": "Product 5",
+            "avgRating": "4.5",
+            "price": "1000",
+            "image": "Gojo.jpg",
+            "image1": "luffy2.png",
+            "image2": "l.jpg",
+            "image3": "luffy.png"
+        },
+        {
+            "id": "1-6",
+            "name": "Product 6",
+            "avgRating": "4.5",
+            "price": "1000",
+            "image": "luffy2.png",
+            "image1": "Gojo.jpg",
+            "image2": "l.jpg",
+            "image3": "luffy.png"
+        },
+        {
+            "id": "1-7",
+            "name": "Product 7",
+            "avgRating": "4.5",
+            "price": "1000",
+            "image": "luffy.png",
+            "image1": "Gojo.jpg",
+            "image2": "l.jpg",
+            "image3": "luffy2.png"
+        },
+        {
+            "id": "1-8",
+            "name": "Product 8",
+            "avgRating": "4.5",
+            "price": "1000",
+            "image": "l.jpg",
+            "image1": "Gojo.jpg",
+            "image2": "luffy.png",
+            "image3": "luffy2.png"
+        },
+        {
+            "id": "1-9",
+            "name": "Product 9",
+            "avgRating": "4.5",
+            "price": "1000",
+            "image": "l.jpg",
+            "image1": "Gojo.jpg",
+            "image2": "luffy.png",
+            "image3": "luffy2.png"
+        },
+        {
+            "id": "1-11",
+            "name": "Product 11",
+            "avgRating": "4.5",
+            "price": "1000",
+            "image": "l.jpg",
+            "image1": "Gojo.jpg",
+            "image2": "luffy.png",
+            "image3": "luffy2.png"
+        },
+        {
+            "id": "1-12",
+            "name": "Product 12",
+            "avgRating": "4.5",
+            "price": "1000",
+            "image": "l.jpg",
+            "image1": "Gojo.jpg",
+            "image2": "luffy.png",
+            "image3": "luffy2.png"
+        },
+        {
+            "id": "1-13",
+            "name": "Product 13",
+            "avgRating": "4.5",
+            "price": "1000",
+            "image": "l.jpg",
+            "image1": "Gojo.jpg",
+            "image2": "luffy.png",
+            "image3": "luffy2.png"
+        }
+    ]
+}

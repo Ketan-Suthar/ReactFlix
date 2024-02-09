@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useParams } from "react-router-dom";
 import useRestaurantMenu from "../utils/useRestaurantMenu";
 import { CDN_URL, LOGO_URL } from "../utils/constants";
@@ -7,14 +7,14 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 const CategoryItems = (props) => {
     const [showModal, setShowModal] = useState(false);
-    const [imagURL, setImagURL] = useState(false);
+    const [item, setItem] = useState(null);
 
     const { resId } = useParams();
     const resData = useRestaurantMenu(resId);
 
-    const imageClick = (imagURL) => {
+    const imageClick = (selectedItem) => {
         // console.log("opening modal: " + imagURL);
-        setImagURL(imagURL);
+        setItem(selectedItem);
         setShowModal(true);
     }
 
@@ -25,14 +25,11 @@ const CategoryItems = (props) => {
     if (!resData || resData == null) {
         return (<h1>Loading...</h1>);
     }
+    const name = resData?.categoryInfo?.name
+    const cuisines = resData?.categoryInfo?.cuisines
+    const categoryItems = resData?.items || []
+    console.log(categoryItems)
 
-    // console.log(resData);
-
-    let { name, cuisines } = resData?.data?.cards[0]?.card?.card?.info;
-    cuisines = cuisines?.join(", ");
-    let foodItems = resData?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.
-        cards.filter(c => c.card?.card?.["@type"] === "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory")
-    // console.log(foodItems)
     return (
         <>
             <div className="text-center bg-slate-50">
@@ -40,27 +37,23 @@ const CategoryItems = (props) => {
                 <p className="font-bold text-lg">{cuisines}</p>
                 <div className="restaurant-container flex min-h-screen w-full flex-wrap content-center justify-between p-5">
                     {
-                        foodItems?.map((element, ind) => {
-                            return (element?.card?.card?.itemCards?.map((item) => {
-                                return (
+                        categoryItems?.map((element, ind) => {
+                            return (
+                                <div key={element?.id} className="shadow-xl w-52 bg-white p-1 m-2 border-2 border-gray-200">
+                            <div>
+                                <img onClick={() => imageClick(element)} alt="image" className="h-32 w-full object-cover cursor-pointer p-1" 
+                                    src={element?.image ? "/images/" + element?.image : LOGO_URL} />
+                                <ul className="mt-3 flex flex-wrap">
+                                    <li className="mr-auto text-justify">
+                                        {element.name}
+                                    </li>
+                                    <li>
+                                        <span> - ₹ {element.price}</span>
+                                    </li>
+                                </ul>
+                            </div>
 
-                                    <div key={item?.card?.info?.id} className="shadow-xl w-52 bg-white p-1 m-2 border-2 border-gray-200">
-                                        <div>
-                                            <img onClick={() => imageClick(item?.card?.info?.imageId ? CDN_URL + item?.card?.info?.imageId : LOGO_URL)} alt="image" className="h-32 w-full object-cover cursor-pointer p-1" src={item?.card?.info?.imageId ? CDN_URL + item?.card?.info?.imageId : LOGO_URL} />
-                                            <ul className="mt-3 flex flex-wrap">
-                                                <li className="mr-auto text-justify">
-                                                    {item.card.info.name}
-                                                </li>
-                                                <li>
-                                                    <span> - ₹ {item.card.info.price / 100 || item.card.info.defaultPrice / 100}</span>
-                                                </li>
-                                            </ul>
-                                        </div>
-
-                                    </div>
-
-                                )
-                            })
+                        </div>
                             )
                         })
                     }
@@ -75,32 +68,32 @@ const CategoryItems = (props) => {
 
                 <img id="modal-img" className="max-w-[800px] max-h-[600px] object-cover" src={imagURL} />
             </div>)} */}
-            {showModal && <ItemModal closeModal={closeModal} imagURL={imagURL} />}
+            {showModal && <ItemModal closeModal={closeModal} item={item} />}
         </>
     )
 }
 
 
-const ItemModal = ({ closeModal, imagURL }) => {
+const ItemModal = ({ closeModal, item }) => {
     return (
         <div className="fixed top-0 left-0 w-screen h-screen bg-black/75 z-[101] justify-center items-center flex">
             <a className="fixed z-90 top-2 right-2 text-white text-closebtn font-bold cursor-pointer bg-black h-11 w-9 text-center hover:scale-110 transition duration-500 object-cover"
                 onClick={closeModal}>&times;</a>
             <section className="h-4/5 w-4/5 flex justify-center items-center">
-                <div className="h-full m-4 w-full rounded-md border border-gray-100 text-gray-600 shadow-md bg-white">
-                    <div className="overflow-scroll no-scrollbar flex h-full flex-col text-gray-600 md:flex-row justify-between">
-                        <div className="w-full sm:w-3/5 h-full p-2 rounded-md">
+                <div className="overflow-scroll no-scrollbar h-full m-4 w-full rounded-md border border-gray-100 text-gray-600 shadow-md bg-white">
+                    <div className="flex flex-col text-gray-600 md:flex-row justify-between">
+                        <div className="block h-1/2 w-full sm:w-3/5 rounded-md">
                             {/* <img className="block h-full max-w-full rounded-md shadow-lg" src={imagURL} alt="Shop image" /> */}
-                            <ImageSection />
+                            <ImageSection item={item} />
                         </div>
                         <div className="relative p-8 md:w-2/5">
                             <div className="flex flex-col md:flex-row">
-                                <h2 className="mb-2 text-2xl font-black">Product Name</h2>
+                                <h2 className="mb-2 text-2xl font-black">{item.name}</h2>
                             </div>
                             <p className="mt-3 font-sans text-base tracking-normal">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos voluptate vero soluta voluptatum error non.</p>
                             <div className="flex flex-col md:flex-row md:items-end">
-                                <p className="mt-6 text-xl font-black"> ₹7000</p>
-                                <span className="ml-2 text-xs uppercase" hidden={true}>258 Sales</span>
+                                <p className="mt-6 text-xl font-black"> ₹{item?.price}</p>
+                                {/* <span className="ml-2 text-xs uppercase" hidden={true}>258 Sales</span> */}
                             </div>
                             <div className="mt-8 flex flex-col sm:flex-row">
                                 <button className="mr-2 mb-4 flex cursor-pointer items-center justify-center rounded-md bg-emerald-400 py-2 px-8 text-center text-white transition duration-150 ease-in-out hover:translate-y-1 hover:bg-emerald-500">
@@ -118,24 +111,36 @@ const ItemModal = ({ closeModal, imagURL }) => {
     )
 }
 
-const ImageSection = ({ autoPlay }) => {
-    const images = [
-        "/images/Gojo.jpg",
-        "/images/l.jpg",
-        "/images/luffy.png",
-        "/images/Gojo.jpg",
-        "/images/l.jpg",
-        "/images/luffy.png",
-        "/images/Gojo.jpg",
-        "/images/l.jpg",
-        "/images/luffy.png"
-    ];
+const ImageSection = ({ item }) => {
+    const [images, setImages] = useState([]);
+    useEffect(() => {
+        const imgs = []
+        if(item?.image)
+        imgs.push(item?.image)
+        let i = 1
+        while (true) {
+            const key = `image${i}`
+            if(key in item){
+                imgs.push(item[key])
+                ++i
+            }else{
+                break;
+            }
+        }
+        console.log("imgs:" + imgs)
+        setImages(imgs)
+    }, [])
+
     const [isZoomed, setIsZoomed] = useState(false);
     const [modalOpen, setModalOpen] = useState(false);
     const [position, setPosition] = useState({ x: 0, y: 0 });
     const [mouse, setMouse] = useState({ x: 0, y: 0 });
     const [showGIF, setShowGIF] = useState(false);
     const imageRef = useRef(null)
+
+    if(!images || images.length == 0){
+        return <h1>Loading...</h1>
+    }
 
     const handleZoom = (e) => {
         console.log("mouse");
@@ -154,8 +159,8 @@ const ImageSection = ({ autoPlay }) => {
     }
 
     return (
-        <div className="flex justify-center items-center h-full w-full bg-white">
-            <div className="h-full w-full">
+        <div className="flex justify-center items-center bg-white ">
+            <div className="">
                 <ImageCarousel images={images} handleZoom={handleZoom} isZoomed={isZoomed} setIsZoomed={setIsZoomed} 
                     modalOpen={modalOpen} setModalOpen={setModalOpen} showGIF={showGIF} setShowGIF={setShowGIF} imageRef={imageRef} />
                 {/* {showGIF && (
@@ -193,7 +198,7 @@ const ImageCarousel = ({images, handleZoom, isZoomed, setIsZoomed, modalOpen, se
                     //     setShowGIF(false);
                     // }}
                 >
-                    <img ref={imageRef} className="" alt="sample_file" src={URL} />
+                    <img ref={imageRef} className="object-center" alt="sample_file" src={"/images/" + URL} />
                 </div>
             ))}
         </Carousel>
